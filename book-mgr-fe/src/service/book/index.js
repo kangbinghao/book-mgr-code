@@ -13,7 +13,7 @@ export const list=(data)=>{
 }
 // 请求删除接口
 export const del=(id)=>{
-  console.log(id)
+  // console.log(id)
   return axios.delete(
     `http://localhost:3000/book/${id}`
   )
@@ -30,5 +30,11 @@ export const update=(data={})=>{
   return axios.post(
     `http://localhost:3000/book/update`,
     data,
+  )
+}
+// 书籍详情
+export const detail =(id)=>{
+  return axios.get(
+    `http://localhost:3000/book/detail/${id}`
   )
 }

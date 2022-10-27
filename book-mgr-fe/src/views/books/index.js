@@ -4,9 +4,11 @@ import { ref,onMounted} from 'vue'
 import { book } from '@/service'
 import { result,formatTimestamp,clone } from '@/helpers/utils'
 import { message,Modal,Input} from 'ant-design-vue'
+import {  useRouter } from 'vue-router'
 export default {
   components:{addOne,Update},
    setup() {
+    const router=useRouter()
     const columns=[
           {
             title: '书名',
@@ -151,13 +153,18 @@ export default {
       })
     }
      
-    // 编辑修改数据方法
+    // 显示更新弹框
     const update= async (record)=>{
         showUpdateModel.value=true
         curEditBook.value=record
     }
+    // 更新列表的 某一本书籍的数据
     const updateCurBook=(newData)=>{
       Object.assign(curEditBook.value,newData)
+    }
+    // 进入书籍详情页 数据详情
+    const todetail=(record)=>{
+        router.push(`/books/${record._id}`)
     }
       return {
         columns,
@@ -176,7 +183,8 @@ export default {
         showUpdateModel,
         update,
         curEditBook,
-        updateCurBook
+        updateCurBook,
+        todetail
 
       }
    }

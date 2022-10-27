@@ -1,5 +1,5 @@
 // 定义原信息内容 包括创建时间和修改时间
-const getMate=()=>{
+const getMeta=()=>{
   return {
     createAt:{
       type:Number,
@@ -12,7 +12,19 @@ const getMate=()=>{
     },
   }
 }
+// 保存之前执行
+const preSave=function (next) {
+  if (this.isNew) {
+    const ts=Date.now()
+    this['meta'].createAt=ts;
+    this['meta'].updatedAt=ts;
+  }else{
+    this['meta'].createAt=Date.now()
+  }
+  next()
+}
 // 导出函数
 module.exports={
-  getMate,
+  getMeta,
+  preSave
 }

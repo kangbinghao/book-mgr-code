@@ -4,7 +4,8 @@ require("./Schemas/User")
 require("./Schemas/InviteCode")
 // 执书籍管理 schemas
 require("./Schemas/Book")
-
+// 执书 出入库日志 schemas
+require("./Schemas/InventoryLog")
 
 // 连接数据库
 const mongoose=require("mongoose")

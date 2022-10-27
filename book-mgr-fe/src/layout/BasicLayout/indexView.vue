@@ -81,7 +81,7 @@ export default defineComponent({
     display: flex;
     .left{
       width: 256px;
-      background-color: pink;
+      background-color: #fff;
       position: fixed;
       top: 64px;
       bottom: 0;

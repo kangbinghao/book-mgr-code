@@ -1,3 +1,8 @@
 <template>
   <router-view/>
-</template>
+</template >
+<style lang="scss">
+  body{
+    background: #fafafa !important;
+  }
+</style>

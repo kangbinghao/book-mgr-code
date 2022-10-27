@@ -17,6 +17,12 @@ const routes = [
         name: 'Books',
         component: () => import(/* webpackChunkName: "books" */ '../views/books/index.vue')
       },
+      // 根据id显示对应商品详情页面路由
+      {
+        path: 'books/:id',
+        name: 'BookDetail',
+        component: () => import(/* webpackChunkName: "books" */ '../views/BookDetail/index.vue')
+      },
     ]
   },
 

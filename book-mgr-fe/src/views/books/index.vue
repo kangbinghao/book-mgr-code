@@ -16,7 +16,7 @@
       <a-button @click="show=true">添加一条</a-button>
       </space-between>
       <a-divider></a-divider>
-      <a-table :columns="columns" :data-source="list" :pagination="false">
+      <a-table :columns="columns" :data-source="list" :pagination="false" bordered>
         <!-- 老版插槽能出效果但会报错 -->
       <!-- <template #publishDate="data">
         {{formatTimestamp(data.record.publishDate)}}
@@ -30,6 +30,8 @@
           </template>
           <!-- 操作 -->
           <template v-if="column.dataIndex === 'actions'">
+            <a href="javascript:;" @click="todetail(record)">详情</a>
+            /
             <a href="javascript:;" @click="update(record)">编辑</a>
             /
             <a href="javascript:;" @click="remove(record)">删除</a>
