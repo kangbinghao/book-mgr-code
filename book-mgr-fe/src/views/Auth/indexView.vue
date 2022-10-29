@@ -1,7 +1,7 @@
 <template>
   <div class="auth">
     <div class="title-info">
-      <img class="logo" src="https://www.wudibiancheng.com/uploads/20220918/f344f8979c6fa8c6447dbdd7cb4d97f6.png" alt="">
+      <img class="logo" src="../../assets/logo.png" alt="">
       <h2 class="title">图书管理系统后台</h2>
     </div>
     <div class="form">

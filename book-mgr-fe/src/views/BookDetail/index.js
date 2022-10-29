@@ -87,6 +87,7 @@ export default ({
           )
         result(res)
         .success(({data:{list,total}})=>{
+          console.log(list)
           log.value=list
           logTotal.value=total
         })
